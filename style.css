@@ -1,61 +1,80 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    /* Deep, moody gradient background */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0; /* Light text for readability */
     display: flex;
     justify-content: center;
     padding: 50px;
+    min-height: 100vh; /* Ensures the background covers the whole screen */
+    margin: 0;
 }
+
 #app-container {
-    background: #ffffff;
+    height: fit-content;
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.05); /* Just 5% white */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Safari support */
+    
+    /* The Light-Catching Edge */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
     width: 100%;
     max-width: 400px;
 }
-.input-section {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
 #task-input {
     flex-grow: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.1); /* 10% white for a frosted look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-}
-
-#add-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
+    color: white; /* Makes your typing visible against the dark background */
+    outline: none;
 }
 
 li {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.05); /* 5% white */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white; /* White text for the tasks */
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Keeps the default left-indent removed */
+    margin-top: 20px; /* Adds space above the entire list */
+    width: 100%;
+}
+/* Base style for all buttons */
+button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Makes the hover effect smooth */
 }
 
-li button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
+/* Lights up slightly when you hover over the Add Task button */
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Turns a glassy red when you hover over the Delete button */
+li button:hover {
+    background: rgba(220, 53, 69, 0.6); 
+    border-color: rgba(220, 53, 69, 0.8);
 }
